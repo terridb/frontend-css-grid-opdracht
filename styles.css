@@ -1,1 +1,113 @@
-/*Maak hier jouw CSS!*/
+/* ////////////////////////////////////////////////////////////////////////////
+   Table of Contents:
+    1. Global Styles
+    2. Typography
+    3. Layout
+    4. Media queries
+
+//////////////////////////////////////////////////////////////////////////// */
+
+/* //////////////////////
+    1. Global Styles
+////////////////////// */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Times New Roman", serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+:root {
+    --background-color: #DCCDE8;
+    --block-color: #D99AC5;
+    --border-color: #B37BA4;
+    --text-color: #FFF;
+}
+
+/* //////////////////////
+    2. Typography
+////////////////////// */
+
+
+/* //////////////////////
+    3. Layout
+////////////////////// */
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--block-color);
+    border: 3px solid var(--border-color);
+}
+
+.container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+    row-gap: 16px;
+    column-gap: 16px;
+    grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "."
+    "f"
+}
+
+.item-a {
+    grid-area: a;
+}
+
+.item-b {
+    grid-area: b;
+    padding: 20px;
+}
+
+.item-c {
+    grid-area: c;
+}
+
+.item-d {
+    grid-area: d;
+}
+
+.item-e {
+    grid-area: e;
+}
+
+.item-f {
+    grid-area: f;
+}
+
+/* //////////////////////
+    4. Media queries
+////////////////////// */
+@media screen and (min-width: 576px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px 190px 100px auto 50px;
+        grid-template-areas:
+        "a c c"
+        "b c c"
+        "b e d"
+        "b e ."
+        "f f f"
+    }
+}
